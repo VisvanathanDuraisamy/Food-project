@@ -10,8 +10,9 @@ class ChatsTab extends StatelessWidget {
       home: Scaffold(
         body: ListView.builder(
           itemCount: 20,
-          itemBuilder: (BuildContext context, int index) {
-            return const ListTile(
+          itemBuilder: (BuildContext context, i)=> const Column(children: const [
+            Divider(height: 0.2,),
+             ListTile(
               leading: CircleAvatar(
                 radius: (30),
                 backgroundImage: NetworkImage(
@@ -29,8 +30,11 @@ class ChatsTab extends StatelessWidget {
               ),
               trailing: Text('12:30 am'),
               contentPadding: EdgeInsets.only(left: 20),
-            );
-          }, //
+            ),
+
+          ],
+
+          ),
         ),
       ),
     );
