@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 
 void main (){
   runApp(
-    const Myapp()
+    const Myapp1()
   );
 }
-class Myapp extends StatelessWidget {
-  const Myapp({super.key});
+class Myapp1 extends StatelessWidget {
+  const Myapp1({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class _Splash1State extends State<Splash1> {
       const Duration(seconds: 10),
       () => Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const mainScreen()),
+        MaterialPageRoute(builder: (context) => const Tab1()),
       ),
     );
   }
@@ -57,45 +57,3 @@ class _Splash1State extends State<Splash1> {
     );
   }
 }
-
-
-// ignore: camel_case_types
-class mainScreen extends StatefulWidget {
-  const mainScreen({super.key});
-
-  @override
-  State<mainScreen> createState() => _mainScreenState();
-}
-
-// ignore: camel_case_types
-class _mainScreenState extends State<mainScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: const Icon(Icons.menu),
-        backgroundColor: Colors.green,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.camera_alt_outlined),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.search_rounded),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.more_vert),
-          ),
-        ],
-        title: const Text("MODEL"),
-      ),
-      body: const Tab1 (),
-    );
-
-    
-    
-  }
-}
-
