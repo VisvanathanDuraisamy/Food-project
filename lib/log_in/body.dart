@@ -1,11 +1,12 @@
-import 'package:chat_app/log_in/splash.dart';
-import 'package:flutter/material.dart';
-void main(){
-  runApp(
-    const Myapp()
-  );
 
-}
+import 'package:chat_app/log_in/cals.dart';
+import 'package:chat_app/log_in/chats.dart';
+import 'package:chat_app/log_in/splash.dart';
+import 'package:chat_app/log_in/status.dart';
+import 'package:flutter/material.dart';
+
+
+
 class Tab1 extends StatefulWidget {
   const Tab1({super.key});
 
@@ -19,15 +20,12 @@ class _Tab1State extends State<Tab1> {
     return MaterialApp(
       debugShowCheckedModeBanner:true,
       home: DefaultTabController(
-        length: 3,
+        length: 4,
         child: Scaffold(
           backgroundColor: Colors.grey,
           appBar: AppBar(
             actions: [
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.camera_alt_outlined),
-              ),
+              
               IconButton(
                 onPressed: () {},
                 icon: const Icon(Icons.search),
@@ -56,6 +54,9 @@ class _Tab1State extends State<Tab1> {
             ],
             bottom: const TabBar(
               tabs: [
+                 Tab(
+                  icon:  Icon(Icons.camera_alt_outlined),
+                ),
                 Tab(
                   icon: Text(
                     "chats",
@@ -81,7 +82,11 @@ class _Tab1State extends State<Tab1> {
           ),
           body: const TabBarView(
            children: <Widget>[
-             chatsTab(),
+            Cam(),
+             ChatsTab(),
+             StatusTab(),
+             CalsTab(),
+             
             ],
           ),
         ),
@@ -89,16 +94,9 @@ class _Tab1State extends State<Tab1> {
     );
   }
 }
-// ignore: camel_case_types
-class chatsTab extends StatefulWidget {
-  const chatsTab({super.key});
+class Cam extends StatelessWidget {
+  const Cam({super.key});
 
-  @override
-  State<chatsTab> createState() => _chatsTabState();
-}
-
-// ignore: camel_case_types
-class _chatsTabState extends State<chatsTab> {
   @override
   Widget build(BuildContext context) {
     return const Placeholder();
